@@ -1,0 +1,12 @@
+{
+    "HEADER": {
+        "CUSTOMER_NAME": "Client",
+        "ORDER_DATE": "Date de commande",
+        "ORDER_NUMBER": "Panier / no. de commande",
+        "ORDER_STATUS": "Statut de commande",
+        "ORDER_TYPE": "Type de commande",
+        "SOURCE": "Source",
+        "USERNAME": "Nom d'utilisateur",
+        "VEHICLE": "Véhicules"
+    },
+}

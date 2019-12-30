@@ -1,0 +1,12 @@
+{
+    "HEADER": {
+        "CUSTOMER_NAME": "Kunde",
+        "ORDER_DATE": "Bestelldatum",
+        "ORDER_NUMBER": "Warenkorb / Auftragsnummer",
+        "ORDER_STATUS": "Bestellstatus",
+        "ORDER_TYPE": "Bestelltyp",
+        "SOURCE": "Quelle",
+        "USERNAME": "Benutzername",
+        "VEHICLE": "Fahrzeuge"
+    }
+}

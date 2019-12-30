@@ -1,0 +1,18 @@
+<ngx-datatable
+    [ngClass]="theme"
+    class="table-container"
+    [columns]="headers"
+    [rows]="rows"
+    [scrollbarV]="true"
+    [headerHeight]="haveFilterColumns ? '70' : '45'">
+
+</ngx-datatable>
+
+<ng-template #headerTmpl let-column="column">
+    <div>
+        {{ column.name | translate }}
+    </div>
+    <div *ngIf="column.filterType">
+        <input type="text">
+    </div>
+</ng-template>
