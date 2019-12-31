@@ -6,3 +6,6 @@
         [rows]="rows">
     </app-sag-datatable>
 </section>
+<ng-template #addAction let-row="row">
+    <i class="fa fa-plus" (click)="clickMe(row)"></i>
+</ng-template>

@@ -1,19 +1,29 @@
 <ngx-datatable class="table-container" [ngClass]="theme" [columns]="headers" [rows]="rows" [columnMode]="'standard'"
-    [headerHeight]="100" [virtualization]="true" (sort)="sortColumn($event)">
+    [headerHeight]="100" [virtualization]="true" (sort)="sortColumn($event)" [rowHeight]="'2.4rem'">
 </ngx-datatable>
 
 <ng-template #headerTmpl let-column="column" let-sort="sortFn">
     <span [ngClass]="{'pointer': column.sortable}" (click)="sort()">{{ column.name | translate }}</span>
 </ng-template>
 
+<!-- <ng-template #rowTmpl let-row="row" let-value="value"> -->
+<!-- <ng-template *ngIf="value; else actionTmpl"> -->
+<!-- {{ value }} -->
+<!-- </ng-template> -->
+<!-- </ng-template> -->
+
+<!-- <ng-template #actionTmpl>
+    nothing
+</ng-template> -->
+
+
 <div #filterTmpl class="datatable-row-center">
-    <div class="datatable-header-cell"
-        *ngFor="let cell of headers"
+    <div class="datatable-header-cell" *ngFor="let cell of headers"
         [ngStyle]="{'width': cell.filterType === 'DROPDOWN_FILTER' ? '190px' : '', 'overflow': cell.filterType === 'DROPDOWN_FILTER' ? 'unset':''}">
+        <div *ngIf="!cell.filterType" style="width: 190px;"></div>
         <input *ngIf="cell.filterType === 'USER_INPUT_FILTER'" type="text" class="form-control" style="width: 100%;">
         <ng-container *ngIf="cell.filterType === 'DROPDOWN_FILTER'">
-            <ng-select [items]="orderTypes" bindLabel="name" autofocus
-                bindValue="name">
+            <ng-select [items]="orderTypes" bindLabel="name" autofocus bindValue="name">
             </ng-select>
         </ng-container>
     </div>

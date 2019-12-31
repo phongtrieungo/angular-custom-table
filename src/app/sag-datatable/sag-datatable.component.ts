@@ -21,6 +21,8 @@ import { FilterType } from '../models/filter-type';
 export class SagDatatableComponent implements OnInit, AfterViewInit {
     @ViewChild('headerTmpl', { static: true }) headerTmpl: TemplateRef<any>;
     @ViewChild('filterTmpl', { static: true }) filterTmpl: ElementRef<any>;
+    @ViewChild('rowTmpl', { static: true }) rowTmpl: TemplateRef<any>;
+
 
     @Input() headers: ColumnType[];
     @Input() rows = [];
@@ -39,7 +41,8 @@ export class SagDatatableComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
         this.translateService.setDefaultLang('de');
-        this.headers = this.headers.map(header => ({ ...header, headerTemplate: this.headerTmpl }));
+        this.headers = this.headers.map(header => ({ ...header, headerTemplate: this.headerTmpl, cellTemplate: header.cellTemplate }));
+
     }
 
     ngAfterViewInit() {

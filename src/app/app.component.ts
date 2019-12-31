@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { ColumnType } from './models/column-type';
 
 @Component({
@@ -7,6 +7,7 @@ import { ColumnType } from './models/column-type';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+    @ViewChild('addAction', { static: true }) addAction: TemplateRef<any>;
     rows = [
         {
             customerName: 'Phong',
@@ -29,18 +30,23 @@ export class AppComponent implements OnInit {
             vehicle: 'AUDI 8X'
         }
     ];
-    headers: ColumnType[] = [
-        { prop: 'customerName', name: 'HEADER.CUSTOMER_NAME', filterType: 'USER_INPUT_FILTER', sortable: true},
-        { prop: 'orderDate', name: 'HEADER.ORDER_DATE', filterType: 'USER_INPUT_FILTER', sortable: true},
-        { prop: 'orderNumber', name: 'HEADER.ORDER_NUMBER', filterType: 'USER_INPUT_FILTER', sortable: true},
-        { prop: 'orderStatus', name: 'HEADER.ORDER_STATUS', filterType: 'DROPDOWN_FILTER', sortable: false},
-        { prop: 'orderType', name: 'HEADER.ORDER_TYPE', filterType: 'DROPDOWN_FILTER', sortable: false},
-        { prop: 'source', name: 'HEADER.SOURCE', filterType: 'DROPDOWN_FILTER', sortable: false},
-        { prop: 'userName', name: 'HEADER.USERNAME', filterType: 'USER_INPUT_FILTER', sortable: false},
-        { prop: 'vehicle', name: 'HEADER.VEHICLE', filterType: 'USER_INPUT_FILTER', sortable: false},
-    ];
+    headers: ColumnType[] = [];
 
     ngOnInit() {
+        this.headers = [
+            { prop: 'customerName', name: 'HEADER.CUSTOMER_NAME', filterType: 'USER_INPUT_FILTER', sortable: true},
+            { prop: 'orderDate', name: 'HEADER.ORDER_DATE', filterType: 'USER_INPUT_FILTER', sortable: true},
+            { prop: 'orderNumber', name: 'HEADER.ORDER_NUMBER', filterType: 'USER_INPUT_FILTER', sortable: true},
+            { prop: 'orderStatus', name: 'HEADER.ORDER_STATUS', filterType: 'DROPDOWN_FILTER', sortable: false},
+            { prop: 'orderType', name: 'HEADER.ORDER_TYPE', filterType: 'DROPDOWN_FILTER', sortable: false},
+            { prop: 'source', name: 'HEADER.SOURCE', filterType: 'DROPDOWN_FILTER', sortable: false},
+            { prop: 'userName', name: 'HEADER.USERNAME', filterType: 'USER_INPUT_FILTER', sortable: false},
+            { prop: 'vehicle', name: 'HEADER.VEHICLE', filterType: 'USER_INPUT_FILTER', sortable: false},
+            { prop: '', name: 'hanh dong', sortable: false, cellTemplate: this.addAction}
+        ];
+    }
 
+    clickMe(data){
+        alert(data.customerName);
     }
 }
