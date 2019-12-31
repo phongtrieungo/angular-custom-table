@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ColumnType } from './sag-datatable/models/column-type';
+import { ColumnType } from './models/column-type';
 
 @Component({
     selector: 'app-root',
@@ -19,25 +19,25 @@ export class AppComponent implements OnInit {
             vehicle: 'AUDI A5'
         },
         {
-            customerName: 'Phong',
+            customerName: 'Linh',
             orderDate: new Date().getTime(),
-            orderNumber: 97823817,
-            orderStatus: 'ORDERED',
-            orderType: 'STD',
+            orderNumber: 12397823,
+            orderStatus: 'SUSPENDED',
+            orderType: 'KSL',
             source: 'Customer',
-            userName: 'duongdang.at.ax',
-            vehicle: 'AUDI A5'
+            userName: 'phongngo.at.ax',
+            vehicle: 'AUDI 8X'
         }
     ];
     headers: ColumnType[] = [
-        { prop: 'customerName', name: 'HEADER.CUSTOMER_NAME', filterType: 'freetext', sortable: false },
-        { prop: 'orderDate', name: 'HEADER.ORDER_DATE', sortable: false },
-        { prop: 'orderNumber', name: 'HEADER.ORDER_NUMBER', sortable: false, canAutoResize: true },
-        { prop: 'orderStatus', name: 'HEADER.ORDER_STATUS', filterType: 'freetext', sortable: false },
-        { prop: 'orderType', name: 'HEADER.ORDER_TYPE', filterType: 'freetext', sortable: false },
-        { prop: 'source', name: 'HEADER.SOURCE', sortable: false },
-        { prop: 'userName', name: 'HEADER.USERNAME', filterType: 'freetext', sortable: false },
-        { prop: 'vehicle', name: 'HEADER.VEHICLE', filterType: 'freetext', sortable: false },
+        { prop: 'customerName', name: 'HEADER.CUSTOMER_NAME', filterType: 'USER_INPUT_FILTER', sortable: true},
+        { prop: 'orderDate', name: 'HEADER.ORDER_DATE', filterType: 'USER_INPUT_FILTER', sortable: true},
+        { prop: 'orderNumber', name: 'HEADER.ORDER_NUMBER', filterType: 'USER_INPUT_FILTER', sortable: true},
+        { prop: 'orderStatus', name: 'HEADER.ORDER_STATUS', filterType: 'DROPDOWN_FILTER', sortable: false},
+        { prop: 'orderType', name: 'HEADER.ORDER_TYPE', filterType: 'DROPDOWN_FILTER', sortable: false},
+        { prop: 'source', name: 'HEADER.SOURCE', filterType: 'DROPDOWN_FILTER', sortable: false},
+        { prop: 'userName', name: 'HEADER.USERNAME', filterType: 'USER_INPUT_FILTER', sortable: false},
+        { prop: 'vehicle', name: 'HEADER.VEHICLE', filterType: 'USER_INPUT_FILTER', sortable: false},
     ];
 
     ngOnInit() {

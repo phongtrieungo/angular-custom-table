@@ -1,6 +1,8 @@
 @import '../node_modules/@swimlane/ngx-datatable/themes/bootstrap.scss';
 @import '../node_modules/@swimlane/ngx-datatable/themes/dark.scss';
-@import '../node_modules/@swimlane/ngx-datatable/themes/material.scss';
-
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 @import './theme/table.scss';

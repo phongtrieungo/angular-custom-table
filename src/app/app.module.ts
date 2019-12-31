@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { SagDatatableModule } from './sag-datatable/sag-datatable.module';
 
@@ -24,7 +25,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
                 deps: [HttpClient]
             },
             isolate: true
-        })
+        }),
+        BsDropdownModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]

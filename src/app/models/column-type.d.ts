@@ -1,7 +1,7 @@
-import { TemplateRef } from '@angular/core';
+import { FilterType } from './filter-type';
 
 /**
- * The class will represent for a colum of table
+ * The class will represent for a colum information of table
  */
 export declare class ColumnType {
     /**
@@ -19,14 +19,9 @@ export declare class ColumnType {
     /**
      * Indicate if the column can be filtered
      */
-    filterType?: 'date' | 'freetext' | 'combo';
+    filterType?: string;
     /**
      * Indicate if the column will take all remaind space
      */
     canAutoResize?: boolean;
-
-    /**
-     * Indicate the custom template for header if it has
-     */
-    headerTemplate?: TemplateRef<any>;
 }

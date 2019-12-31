@@ -1,0 +1,4 @@
+export enum FilterType {
+    USER_INPUT_FILTER = 'USER_INPUT_FILTER',
+    DROPDOWN_FILTER = 'DROPDOWN_FILTER'
+}

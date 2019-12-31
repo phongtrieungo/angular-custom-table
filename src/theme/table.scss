@@ -6,17 +6,19 @@
   font-size: 1em;
 
   .datatable-header {
-    background: #0073be;
+    background: #fff;
     color: white;
     font-size: 1em;
+    .datatable-header-inner {
+      flex-direction: column;
+      .datatable-header-cell {
+        text-align: left;
+        margin: 0.5rem 1.2rem;
+        font-weight: bold;
 
-    .datatable-header-cell {
-      text-align: left;
-      margin: 0.5rem 1.2rem;
-      font-weight: bold;
-
-      .datatable-header-cell-label {
-        line-height: 24px;
+        .datatable-header-cell-label {
+          line-height: 24px;
+        }
       }
     }
   }
@@ -33,7 +35,7 @@
       }
 
       &:hover {
-        background: #0073be;
+        background: #959aa5;
         transition-property: background;
         transition-duration: 0.3s;
         transition-timing-function: linear;
