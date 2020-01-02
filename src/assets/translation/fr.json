@@ -7,6 +7,7 @@
         "ORDER_TYPE": "Type de commande",
         "SOURCE": "Source",
         "USERNAME": "Nom d'utilisateur",
-        "VEHICLE": "Véhicules"
+        "VEHICLE": "Véhicules",
+        "BACKORDER": "Offen"
     },
 }

@@ -35,12 +35,10 @@
       }
 
       &:hover {
-        background: #959aa5;
         transition-property: background;
         transition-duration: 0.3s;
         transition-timing-function: linear;
-        color: #fff;
-        cursor: pointer;
+        background-color: #e8ebf3;
       }
 
       &:focus {

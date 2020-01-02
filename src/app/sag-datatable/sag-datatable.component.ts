@@ -25,7 +25,7 @@ export class SagDatatableComponent implements OnInit, AfterViewInit {
 
 
     @Input() headers: ColumnType[];
-    @Input() rows = [];
+    @Input() body = [];
     @Input() theme = 'dark';
     @Input() haveFilterColumns: boolean;
 
