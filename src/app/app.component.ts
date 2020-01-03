@@ -3,6 +3,9 @@ import { ColumnType } from './models/column-type';
 import { of } from 'rxjs';
 import { DataService } from './services/sag-datatable.service';
 import { OrderHistory } from './models/order-history';
+import { SagDatatableConfig } from './models/sag-datatable-config';
+import { Paging } from './models/paging';
+import { SortingInfo } from './models/sorting';
 
 @Component({
     selector: 'app-root',
@@ -13,15 +16,14 @@ export class AppComponent implements OnInit {
     @ViewChild('actions', { static: true }) actions: TemplateRef<any>;
     @ViewChild('dateTemplate', { static: true }) dateTemplate: TemplateRef<any>;
 
-    body: OrderHistory[] = [];
-    headers: ColumnType[] = [];
+    public datatableConfig = new SagDatatableConfig();
 
-    constructor(private dataService: DataService) {}
+    private headers: ColumnType[] = [];
+    private readonly orderHistoryUrl = 'assets/data/order-history.json';
+
+    constructor() {}
 
     ngOnInit() {
-        this.dataService.getOrderHistory().subscribe((data: any) => {
-            this.body = [...data.content];
-        });
 
         this.headers = [
             { prop: 'date', name: 'HEADER.ORDER_DATE', filterType: 'USER_INPUT_FILTER', sortable: true, cellTemplate: this.dateTemplate },
@@ -32,6 +34,9 @@ export class AppComponent implements OnInit {
             { prop: 'source', name: 'HEADER.SOURCE', filterType: 'USER_INPUT_FILTER', sortable: false },
             { prop: '', name: '', sortable: false, cellTemplate: this.actions }
         ];
+
+        this.datatableConfig.headers = this.headers;
+        this.datatableConfig.url = this.orderHistoryUrl;
     }
 
     view(data) {
@@ -40,5 +45,14 @@ export class AppComponent implements OnInit {
 
     addToBasket(data) {
         alert('Add item: ' + JSON.stringify(data, undefined, 4));
+    }
+
+    sort(sortInfo: SortingInfo) {
+        console.log(sortInfo);
+    }
+
+    paging(pageInfo: Paging) {
+        console.log(pageInfo);
+
     }
 }

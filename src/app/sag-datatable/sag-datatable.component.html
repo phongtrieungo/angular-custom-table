@@ -1,7 +1,7 @@
-<ngx-datatable class="table-container"
-[ngClass]="theme" [columns]="headers" [rows]="body" [columnMode]="'standard'"
-    [headerHeight]="100"
-    [virtualization]="true" (sort)="sortColumn($event)" [rowHeight]="'2.4rem'" [limit]="10" [footerHeight]="50">
+<ngx-datatable class="table-container" [ngClass]="datatableConfig.theme" [columns]="datatableConfig.headers"
+    [rows]="body" [columnMode]="'standard'" [headerHeight]="datatableConfig.headerHeight" [virtualization]="true"
+    (sort)="sortColumn($event)" [rowHeight]="datatableConfig.rowHeight" [limit]="datatableConfig.itemsPerPage"
+    [footerHeight]="datatableConfig.footerHeight" (page)="setPage($event)" [loadingIndicator]="true">
 </ngx-datatable>
 
 <ng-template #headerTmpl let-column="column" let-sort="sortFn">

@@ -1,9 +1,8 @@
 <section class="table-section">
     <app-sag-datatable
-        [theme]="'sag'"
-        [haveFilterColumns]="true"
-        [headers]="headers"
-        [body]="body">
+        [datatableConfig]="datatableConfig"
+        [serverSorting]="sort"
+        [serverPaging]="paging">
     </app-sag-datatable>
 </section>
 

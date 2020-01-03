@@ -3,19 +3,18 @@
   background: #fff;
   border: 1px solid #2f3646;
   color: black;
-  font-size: 1em;
+  font-size: 1rem;
 
   .datatable-header {
     background: #fff;
     color: white;
-    font-size: 1em;
+    font-size: 1rem;
     .datatable-header-inner {
       flex-direction: column;
       .datatable-header-cell {
         text-align: left;
         margin: 0.5rem 1.2rem;
         font-weight: bold;
-
         .datatable-header-cell-label {
           line-height: 24px;
         }
@@ -25,13 +24,19 @@
 
   .datatable-body {
     background: #fff;
-
+    font-size: 0.8rem;
     .datatable-body-row {
       border-top: 1px solid #c3c9d8;
 
       .datatable-body-cell {
         text-align: left;
         margin: 0.3rem 1.2rem;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+            justify-content: center;
+        }
       }
 
       &:hover {
@@ -53,8 +58,8 @@
   }
 
   .datatable-footer {
-    background: #232837;
-    color: #72809b;
+    background: #fff;
+    color: #fff;
     margin-top: -1px;
 
     .page-count {
@@ -74,7 +79,8 @@
           &:not(.disabled) {
             &.active a,
             &:hover a {
-              background-color: #455066;
+              background-color: #1483ff;
+              color: #fff;
               font-weight: bold;
             }
           }
